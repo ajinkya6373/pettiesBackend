@@ -1,0 +1,159 @@
+POST http://localhost:3000/user/new
+content-type: application/json
+
+{
+    "name": "ajinkya11",
+    "email": "ajinkya11@gmail.com",
+    "password":"pass1231",
+    "isAdmin":"true"
+
+}
+###
+
+GET http://localhost:3000/user/62d3d1ff08739d05623d4c17
+Content-Type: application/json
+
+###
+POST http://localhost:3000/user
+content-type: application/json
+
+{
+    "user":{
+        "name": "ajinkya",
+        "email": "ajinkya@gmail.com",
+        "password":"pass123"
+    }
+}
+
+###
+
+POST http://localhost:3000/pets/62d3d1ff08739d05623d4c17
+Content-Type: application/json
+
+{
+    "name": "Fish",
+    "services": ["Food", "Accessories", "Aquarium Decor" ]
+
+}
+
+###
+GET http://localhost:3000/pets
+Content-Type: application/json
+
+
+###
+GET  https://modshop-backend.kushanksriraj.repl.co/cart/
+Content-Type: application/json
+
+
+###
+POST https://modshop-backend.kushanksriraj.repl.co/products
+Content-Type: application/json
+
+{
+     "assuredDelivery": "true",
+      "discountPercentage": "7",
+      "rating": "4.3",
+      "onSale": "true",
+      "name": "doggy",
+      "brandName": "labrador",
+      "price": 1699,
+      "description": "what i am doing here i dont know lorem ipsum Unsplash is now supported in multiple languages. You can switch back to English at any time. More languages coming soon",
+      "imageUrl": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "category": "iPhone case",
+      "stock": 10
+}
+
+
+###
+POST http://localhost:3000/products/62d3d1ff08739d05623d4c17
+Content-Type: application/json
+{
+
+    "name":"Whiskas Adult Cat Food (1+ Years), 20 kg",
+    "price":"30",
+    "password":"pass123",
+    "description":"Cats are fussy eaters and it can get really difficult to please their palate. Whiskas brings to you delicious yet nutritious complete and balanced meals with 41 essential nutrients. Specially formulated for adult cats (1+ years), Whiskas dry food contains vitamin A and taurine for healthy eyesight, omega 6 and zinc for a healthy coat with 23 vitamins and minerals required to keep your cat lively and energetic. It is also enriched with calcium, phosphorus and vitamin D for healthy bone and teeth. The delicious taste of ocean fish will delight your furball’s palate and will also give them the goodness of 41 essential nutrients.",
+    "imageUrl":"https://www.marshallspetzone.com/34199-thickbox_default/whiskas-adult-cat-food-1-years-20-kg.jpg",
+    "stock":"10",
+    "assuredDelivery":"true",
+    "discountPercentage":"2",
+    "rating":"3",
+    "onSale":"false",
+    "category":"Food",
+    "pets": ["Cats"]
+
+}
+
+###
+GET  http://localhost:3000/products/
+Content-Type: application/json
+
+###
+GET  http://localhost:4000/products/62d56ddaf6abbd593bc9c96d
+Content-Type: application/json
+
+###
+GET http://localhost:3000/cart/62d3d1ff08739d05623d4c17
+Content-Type: application/json
+
+###
+
+POST http://localhost:3000/cart/62d3d1ff08739d05623d4c17 
+Accept: */*
+
+{
+     
+    "_id": "62d5690291dd9c79b82c5e1a",
+    "name": "Arden Grange Adult Large Breed Dog Food",
+    "price": 23,
+    "description": "Large breed adult dogs more than 1year with a normal activity level.Giant breed adult dogs more than 18+months with a normal activity level.",
+    "imageUrl": "https://www.marshallspetzone.com/34644-thickbox_default/arden-grange-adult-large-breed-dog-food-12kg.jpg",
+    "stock": 10,
+    "assuredDelivery": true,
+    "discountPercentage": 2,
+    "rating": "3",
+    "onSale": true,
+    "category": "Food",
+    "pets": [
+    "Dogs"
+    ],
+    "createdAt": "2022-07-18T14:06:58.234Z",
+    "updatedAt": "2022-07-18T14:06:58.234Z",
+    "__v": 0
+    
+}
+
+
+###
+POST http://localhost:3000/cart/62d3d1ff08739d05623d4c17/62d56ddaf6abbd593bc9c96d
+Content-Type: application/json
+{
+    "quantity":4
+}
+
+###
+POST http://localhost:3000/wishlist/62d3d1ff08739d05623d4c17
+Content-Type: application/json
+{
+     "_id": "62d5690291dd9c79b82c5e1a",
+}
+
+###
+GET  http://localhost:3000/address/62d3d1ff08739d05623d4c17/62d8330e3764eea5cb5b2065
+Content-Type: application/json
+
+###
+post  http://localhost:3000/address/62d3d1ff08739d05623d4c17/62d8330e3764eea5cb5b2065
+Content-Type: application/json
+
+{
+    "addressUpdate":{
+        "name":"dhana"
+    }
+}
+
+
+###
+GET http://localhost:4000/userData/62d3d1ff08739d05623d4c17 
+Content-Type: application/json 
