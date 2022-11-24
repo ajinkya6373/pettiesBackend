@@ -15,7 +15,7 @@ import Stripe from 'stripe';
 const stripe = new Stripe(process.env.STRIPE_SK);
 import { v4 as uuidv4 } from 'uuid'
 import path from "path";
-const PORT = 4000;
+const PORT = 3000;
 const app = express();
 const __dirname = path.resolve()
 // const path = require('path')
