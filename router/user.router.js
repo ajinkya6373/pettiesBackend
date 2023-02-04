@@ -37,18 +37,32 @@ router.route("/:userId")
   })
 
   
-router.route("/new")
-.post(async (req, res,next) => {
-  catchError(next, async () => {
-    const {user}  = req.body;
-    let newUser = new User(user);
-    newUser = await newUser.save();
-    res.status(200).json({
-      success: true,
-      user: _.pick(newUser, ["_id", "name", "email"])
+  router.route("/new")
+  .post(async (req, res,next) => {
+    catchError(next, async () => {
+    
+      const {user}  = req.body;
+      let newUser = new User(user);
+      newUser = await newUser.save();
+  
+      res.status(200).json({
+        success: true,
+        user: _.pick(newUser, ["_id", "name", "email"])
+      });
+    }, (err) => {
+
+      if(err.code === 11000){
+        return res.status(400).json({
+          success: false,
+          message: "Email already in use. Try a different one."
+        });
+      }
+    return  res.status(500).json({
+        success: false,
+        message: err.message
+      });
     });
-  }
-)});
+  });
 
 export default router;
 

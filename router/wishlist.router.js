@@ -22,7 +22,6 @@ router.route("/:userId")
       const { userId } = req.params;
       const { product } = req.body;
       let wishlist = await WishList.findById(userId);
-
       if (!wishlist) {
         const newWishlist = new WishList({ _id: userId, wishListItems: [product._id] })
         await newWishlist.save();

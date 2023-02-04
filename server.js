@@ -14,9 +14,19 @@ import userDataRoute from "./router/userData.router.js";
 import Stripe from 'stripe';
 const stripe = new Stripe(process.env.STRIPE_SK);
 import { v4 as uuidv4 } from 'uuid'
+import path from "path";
 const PORT = 4000;
-
 const app = express();
+const __dirname = path.resolve()
+// const path = require('path')
+
+// app.use(express.static(path.join(__dirname, 'build')))
+// app.get('/',(req,res)=>{
+//     res.sendFile(path.join(__dirname,'build','index.html'));
+
+// })
+
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/user", userRouter);
