@@ -21,28 +21,24 @@ router.route("/:userId")
     catchError(next, async () => {
       const { userId } = req.params;
       const { newAddress } = req.body;
-
       let address = await Address.findById(userId);
       if (!address) {
         const newUserAddress = new Address({ _id: userId, addressList: [{ ...newAddress }] });
         newUserAddress.save();
-
         return res.status(201).json({
           success: true,
-          newUserAddress
+          address:newUserAddress
         })
       }
-
       address = _.extend(address, {
         addressList: _.concat(address.addressList, {
           ...newAddress
         })
       });
       await address.save();
-
       res.status(201).json({
         success: true,
-        address
+        address:address.addressList[address.addressList.length - 1] 
       })
     });
   });
@@ -50,7 +46,6 @@ router.route("/:userId")
 
 router.route("/:userId/:addressId")
   .get(async (req, res, next) => {
-
     catchError(next, async () => {
       const { userId, addressId } = req.params;
       const addresses = await Address.findById(userId);
@@ -86,7 +81,6 @@ router.route("/:userId/:addressId")
 
 
   .delete(async (req, res, next) => {
-
     catchError(next, async () => {
       const { userId, addressId } = req.params;
       let address = await Address.findById(userId);

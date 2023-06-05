@@ -10,7 +10,6 @@ router.route("/:userId")
         catchError((next), async () => {
             const { userId } = req.params;
             const cartlist = await CartList.findById(userId).populate('cartItems.product');
-            console.log(cartlist);
             res.status(201).json({
                 success: true,
                 cartlist

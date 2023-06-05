@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from "cors";
 import bodyParser from 'body-parser';
-import 'dotenv/config'
+import 'dotenv/config';
 import connectDb from "./db/db.connect.js";
 import userRouter from "./router/user.router.js";
 import petsRoute from "./router/pets.router.js";
@@ -14,10 +14,10 @@ import userDataRoute from "./router/userData.router.js";
 import Stripe from 'stripe';
 const stripe = new Stripe(process.env.STRIPE_SK);
 import { v4 as uuidv4 } from 'uuid'
-import path from "path";
-const PORT = 4000;
+// import path from "path";
+const PORT = 4001;
 const app = express();
-const __dirname = path.resolve()
+// const __dirname = path.resolve()
 // const path = require('path')
 
 // app.use(express.static(path.join(__dirname, 'build')))
@@ -34,7 +34,7 @@ app.use("/pets", petsRoute);
 app.use("/products", productRoute);
 app.use("/cart", cartRoute);
 app.use("/wishlist", wishlistRoute);
-app.use("/orders", orderRoute);
+app.use("/order", orderRoute);
 app.use("/address", addressRoute);
 app.use("/userData", userDataRoute);
 

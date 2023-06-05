@@ -50,7 +50,6 @@ router.route("/:userId")
         user: _.pick(newUser, ["_id", "name", "email"])
       });
     }, (err) => {
-
       if(err.code === 11000){
         return res.status(400).json({
           success: false,

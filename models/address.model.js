@@ -1,7 +1,7 @@
 
 import mongoose from 'mongoose';
 
-const addressSchema = mongoose.Schema({
+export const addressSchema = mongoose.Schema({
   name: {
     type: String,
     trim: true,
