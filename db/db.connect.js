@@ -1,4 +1,3 @@
-
 import mongoose from 'mongoose';
 const dbURL = process.env.dbURL;
  const connectDb = () => {
